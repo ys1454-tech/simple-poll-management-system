@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0', // Listen on all network interfaces for Docker & Codespaces port forwarding
       port: 5173,
+      allowedHosts: true, // Allow GitHub Codespaces *.app.github.dev domains
       proxy: {
         '/api': {
           target: env.VITE_BACKEND_URL || 'http://127.0.0.1:8000',
